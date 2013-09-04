@@ -21,6 +21,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   install_docker      = "apt-get install -q -y --force-yes lxc-docker;"
   install_htop        = "apt-get install htop;"
   install_tree        = "apt-get install tree;"
+  install_git         = "apt-get install git;"
+  install_tig         = "apt-get install tig;"
   
   icmd = "#{apt_update}"\
            "#{aufs_supp}"\
@@ -30,6 +32,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
            "#{install_docker}"\
            "#{install_htop}"\
            "#{install_tree}"
+           "#{install_git}"\
+           "#{install_tig}"
 
   config.vm.provision :shell, :inline => icmd
 end
