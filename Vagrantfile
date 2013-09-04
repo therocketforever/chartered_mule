@@ -13,6 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 5000, host: 5000
 
   #config.vm.customize [ "modifyvm", :id, "--memory", 512 ]
+  
+  config.ssh.max_tries = 150
 
   apt_update          = "apt-get update;"
   restart             = "shutdown -r +1;"
